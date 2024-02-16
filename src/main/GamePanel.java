@@ -9,30 +9,30 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-
+@SuppressWarnings("unused")
 public class GamePanel extends JPanel implements Runnable{
 
     //Set screen settings
     final int originalTileSize = 60;
     final int scale = 1;
-    final int lrBorders = 0;
-    final int udBorders = 0;
+    public final int lrBorders = 100;
+    public final int udBorders = 50;
     public final int tileSize = originalTileSize * scale;
-    final int maxScreenCol = 15;
-    final int maxScreenRow = 15;
-    final int screenWidth = tileSize*maxScreenCol+lrBorders;
-    final int screenHeight = tileSize * maxScreenRow+udBorders;
+    public final int maxScreenCol = 10;
+    final int maxScreenRow = 10;
+    final int screenWidth = tileSize*maxScreenCol+2*lrBorders;
+    final int screenHeight = tileSize * maxScreenRow+2*udBorders;
 
-    int FPS = 60;
+    public int FPS = 60;
 
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
     Player player = new Player(this,keyH);
-    Grid grid = new Grid(this, maxScreenRow,maxScreenCol);
+    public Grid grid = new Grid(this, maxScreenRow,maxScreenCol);
 
     public GamePanel(){
         this.setPreferredSize(new Dimension(screenWidth,screenHeight));
-        this.setBackground(Color.black);
+        this.setBackground(Color.gray);
         this.setDoubleBuffered(true);
         this.addKeyListener(keyH);
         this.setFocusable(true);
@@ -50,6 +50,7 @@ public class GamePanel extends JPanel implements Runnable{
         long lastTime = System.nanoTime();
         long currentTime;
         long timer = 0;
+
         int drawCount = 0;
         while(gameThread != null){
             
@@ -68,7 +69,7 @@ public class GamePanel extends JPanel implements Runnable{
             }
             
             if(timer >= 100000000){
-                System.out.println("FPS:" + drawCount);
+                //System.out.println("FPS:" + drawCount);
                 drawCount = 0;
                 timer = 0;
             }
@@ -76,6 +77,7 @@ public class GamePanel extends JPanel implements Runnable{
         }
     }
     public void update(){
+
         player.update();
         //TODO: grid.update();
 

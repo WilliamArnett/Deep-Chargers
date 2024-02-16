@@ -39,6 +39,6 @@ public class Tile {
             image = unclicked;
         }
         //System.out.println("Printing at "+x+","+y+". Size: ("+gp.tileSize+") is clicked? " + isClicked);
-        g2.drawImage(image,x,y,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(image,x+gp.lrBorders,y+gp.udBorders,gp.tileSize,gp.tileSize,null);
     }
 }

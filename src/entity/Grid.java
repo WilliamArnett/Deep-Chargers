@@ -27,6 +27,9 @@ public class Grid extends Entity{
         grid.get(51).click();
         grid.get(66).click();
     }
+    public Tile returnTile(int index){
+        return grid.get(index);
+    }
     public void draw(Graphics2D g2){
         for(int i=0; i < grid.size(); i++){
             grid.get(i).draw(g2);
