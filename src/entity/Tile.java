@@ -10,8 +10,12 @@ import main.GamePanel;
 public class Tile {
     GamePanel gp;
     int x,y;
+    int surroundingMines;
     boolean isClicked;
-    BufferedImage unclicked,clicked;
+    boolean hasMine;
+    BufferedImage unclicked,clicked,unclickedDanger;
+
+
     public Tile(int x, int y,GamePanel gp, boolean isClicked){
         this.x = x;
         this.y = y;
@@ -22,6 +26,7 @@ public class Tile {
     public void getTileImage(){
         try{
             clicked = ImageIO.read(getClass().getResourceAsStream("/field/unfilledtile.png"));
+            unclickedDanger = ImageIO.read(getClass().getResourceAsStream("/field/filledtileDanger.png"));
             unclicked = ImageIO.read(getClass().getResourceAsStream("/field/filledtile.png"));
             
         }catch(IOException e){
@@ -31,14 +36,20 @@ public class Tile {
     public void click(){
         isClicked = true;
     }
-    public void draw(Graphics2D g2){
+    public void draw(Graphics2D g2, BufferedImage cat){
         BufferedImage image = null;
-        if(isClicked){
-            image = clicked;
-        }else{
+        if(!isClicked){
             image = unclicked;
+        }else if(hasMine){
+            unclickedDanger = cat;
+            image = unclickedDanger;
+        }else{
+            image = clicked;
         }
         //System.out.println("Printing at "+x+","+y+". Size: ("+gp.tileSize+") is clicked? " + isClicked);
-        g2.drawImage(image,x+gp.lrBorders,y+gp.udBorders,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(image,x+gp.lBorder,y+gp.uBorder,gp.tileSize,gp.tileSize,null);
+        if((surroundingMines != 0) && (isClicked)){
+            g2.drawString(String.valueOf(surroundingMines),(gp.lBorder+10)+x,(gp.uBorder+46)+y);
+        }
     }
 }

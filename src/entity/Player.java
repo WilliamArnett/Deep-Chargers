@@ -60,7 +60,7 @@ public class Player extends Entity{
         gp.grid.returnTile(gridSquareY*gp.maxScreenCol+gridSquareX).click();
     }
     public void update(){
-        System.out.println(moveTimer);
+        //System.out.println(moveTimer);
         if(moveTimer < gp.FPS/2){
             moveDiscrete();
             moveTimer++;
@@ -118,16 +118,16 @@ public class Player extends Entity{
         switch(direction) {
         case "left":
             image = leftFace;
-            System.out.println(direction);
+            //System.out.println(direction);
             break;
         case "right":
             image = rightFace;
-            System.out.println(direction);
+            //System.out.println(direction);
             break;
         }
-        drawX = (int) x+gp.lrBorders;
-        drawY = (int) y+gp.udBorders;
-        System.out.println("("+subGridX+", "+subGridY+")");
+        drawX = (int) x+gp.lBorder;
+        drawY = (int) y+gp.uBorder;
+        //System.out.println("("+subGridX+", "+subGridY+")");
         g2.drawImage(image, drawX, drawY, gp.tileSize, gp.tileSize, null);
     }
 

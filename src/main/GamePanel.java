@@ -1,12 +1,14 @@
 package main;
 
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import entity.Player;
 import entity.Grid;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 @SuppressWarnings("unused")
@@ -15,13 +17,15 @@ public class GamePanel extends JPanel implements Runnable{
     //Set screen settings
     final int originalTileSize = 60;
     final int scale = 1;
-    public final int lrBorders = 100;
-    public final int udBorders = 50;
+    public final int lBorder = 100;
+    public final int uBorder = 150;
+    public final int rBorder = 100;
+    public final int dBorder = 50;
     public final int tileSize = originalTileSize * scale;
     public final int maxScreenCol = 10;
     final int maxScreenRow = 10;
-    final int screenWidth = tileSize*maxScreenCol+2*lrBorders;
-    final int screenHeight = tileSize * maxScreenRow+2*udBorders;
+    final int screenWidth = tileSize*maxScreenCol+lBorder+rBorder;
+    final int screenHeight = tileSize * maxScreenRow+uBorder+dBorder;
 
     public int FPS = 60;
 
@@ -85,9 +89,12 @@ public class GamePanel extends JPanel implements Runnable{
     public void paintComponent(Graphics g){
         
         super.paintComponent(g);
+        Font font = new Font("Verdana", Font.BOLD, 50);
+        g.setFont(font);
         Graphics2D g2 = (Graphics2D)g;
         grid.draw(g2);
         player.draw(g2);
+
         getToolkit().sync();
         g2.dispose();
     }
