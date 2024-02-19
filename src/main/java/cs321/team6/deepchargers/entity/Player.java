@@ -1,4 +1,8 @@
-package entity;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package cs321.team6.deepchargers.entity;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -8,18 +12,13 @@ import java.nio.Buffer;
 
 import javax.imageio.ImageIO;
 
-import main.GamePanel;
-import main.KeyHandler;
-import java.util.ArrayList;
+import cs321.team6.deepchargers.GamePanel;
+import cs321.team6.deepchargers.KeyHandler;
 
 
 public class Player extends Entity{
     GamePanel gp;
     KeyHandler keyH;
-    boolean left = false;
-    boolean up = false;
-    int spriteCounter = 0;
-    int spriteNum = 1;
     int moveTimer = 60;
     boolean canMove = true;
     BufferedImage image;

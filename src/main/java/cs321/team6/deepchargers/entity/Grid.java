@@ -1,7 +1,11 @@
-package entity;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package cs321.team6.deepchargers.entity;
 
-import main.GamePanel;
-import main.KeyHandler;
+import cs321.team6.deepchargers.GamePanel;
+//import cs321.team6.deepchargers.KeyHandler;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
@@ -12,10 +16,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Grid extends Entity{
-    GamePanel gp;
-    KeyHandler keyH;
-    ArrayList<Tile> grid = new ArrayList<Tile>();
-    ArrayList<BufferedImage> catframes = new ArrayList<BufferedImage>();
+    //GamePanel gp;
+    //KeyHandler keyH;
+    ArrayList<Tile> grid = new ArrayList<>();
+    ArrayList<BufferedImage> catframes = new ArrayList<>();
     Random rand = new Random();
     int rows, cols;
     int minesOnGrid = 10;
@@ -25,7 +29,7 @@ public class Grid extends Entity{
     public Grid(GamePanel gp, int rows, int cols){
         this.rows = rows;
         this.cols = cols;
-        this.gp = gp;
+        //this.gp = gp;
         for(int i=0; i<this.rows; i++){
             for(int j=0; j<this.cols;j++){
                 Tile newTile = new Tile(j*gp.tileSize,i*gp.tileSize,gp,false);

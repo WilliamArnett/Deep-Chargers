@@ -1,11 +1,11 @@
-package entity;
+package cs321.team6.deepchargers.entity;
 
 import java.awt.Graphics2D;
 import java.awt.font.GraphicAttribute;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-import main.GamePanel;
+import cs321.team6.deepchargers.GamePanel;
 
 public class Tile {
     GamePanel gp;

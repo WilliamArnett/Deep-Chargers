@@ -1,10 +1,17 @@
-package main;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package cs321.team6.deepchargers;
 
+/**
+ *
+ * @author will
+ */
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
-import entity.Player;
-import entity.Grid;
+import cs321.team6.deepchargers.entity.Player;
+import cs321.team6.deepchargers.entity.Grid;
 
 import java.awt.Color;
 import java.awt.Dimension;
