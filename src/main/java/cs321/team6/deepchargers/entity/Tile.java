@@ -48,6 +48,7 @@ public class Tile {
         }
         //System.out.println("Printing at "+x+","+y+". Size: ("+gp.tileSize+") is clicked? " + isClicked);
         g2.drawImage(image,x+gp.lBorder,y+gp.uBorder,gp.tileSize,gp.tileSize,null);
+        //Number Draw Code
         if((surroundingMines != 0) && (isClicked)){
             g2.drawString(String.valueOf(surroundingMines),(gp.lBorder+10)+x,(gp.uBorder+46)+y);
         }

@@ -14,59 +14,65 @@ public class KeyHandler implements KeyListener{
 
     public void keyPressed(KeyEvent e) {
             int code = e.getKeyCode();
-            if(code == KeyEvent.VK_W){
-                upPressed = true;
+            switch (code){
+                case KeyEvent.VK_W:
+                    upPressed = true;
+                    break;
+                case KeyEvent.VK_S:
+                    downPressed = true;
+                    break;
+                case KeyEvent.VK_A:
+                    leftPressed = true;
+                    break;
+                case KeyEvent.VK_D:
+                    rightPressed = true;
+                    break;
+                case KeyEvent.VK_I:
+                    upRediclePressed = true;
+                    break;
+                case KeyEvent.VK_K:
+                    downRediclePressed = true;
+                    break;
+                case KeyEvent.VK_J:
+                    leftRediclePressed = true;
+                    break;
+                case KeyEvent.VK_L:
+                    rightRediclePressed = true;
+                    break;
             }
-            if(code == KeyEvent.VK_S){
-                downPressed = true;
-            }
-            if(code == KeyEvent.VK_A){
-                leftPressed = true;
-            }
-            if(code == KeyEvent.VK_D){
-                rightPressed = true;
-            }
-            if(code == KeyEvent.VK_I){
-                upRediclePressed = true;
-            }
-            if(code == KeyEvent.VK_K){
-                downRediclePressed = true;
-            }
-            if(code == KeyEvent.VK_J){
-                leftRediclePressed = true;
-            }
-            if(code == KeyEvent.VK_L){
-                rightRediclePressed = true;
-            }
+
     }
 
     public void keyReleased(KeyEvent e) {
 
         int code = e.getKeyCode();
-        if(code == KeyEvent.VK_W){
-            upPressed = false;
+        switch (code){
+            case KeyEvent.VK_W:
+                upPressed = false;
+                break;
+            case KeyEvent.VK_S:
+                downPressed = false;
+                break;
+            case KeyEvent.VK_A:
+                leftPressed = false;
+                break;
+            case KeyEvent.VK_D:
+                rightPressed = false;
+                break;
+            case KeyEvent.VK_I:
+                upRediclePressed = false;
+                break;
+            case KeyEvent.VK_K:
+                downRediclePressed = false;
+                break;
+            case KeyEvent.VK_J:
+                leftRediclePressed = false;
+                break;
+            case KeyEvent.VK_L:
+                rightRediclePressed = false;
+                break;
         }
-        if(code == KeyEvent.VK_S){
-            downPressed = false;
-        }
-        if(code == KeyEvent.VK_A){
-            leftPressed = false;
-        }
-        if(code == KeyEvent.VK_D){
-            rightPressed = false;
-        }
-        if(code == KeyEvent.VK_I){
-            upRediclePressed = false;
-        }
-        if(code == KeyEvent.VK_K){
-            downRediclePressed = false;
-        }
-        if(code == KeyEvent.VK_J){
-            leftRediclePressed = false;
-        }
-        if(code == KeyEvent.VK_L){
-            rightRediclePressed = false;
-        }
+
     }
 
     public void keyTyped(KeyEvent e) {
